@@ -1,0 +1,1 @@
+awk '/^nameserver/ {print $2; x=system("host google.com $2 2>&1 >>/dev/null"); if (x == 0) {print "yes"$2}}' /etc/resolv.conf 
